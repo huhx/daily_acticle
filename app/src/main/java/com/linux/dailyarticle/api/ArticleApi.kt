@@ -1,6 +1,6 @@
 package com.linux.dailyarticle.api
 
-import com.linux.dailyarticle.api.response.ArticleResp
+import com.linux.dailyarticle.api.response.article.ArticleResp
 import com.linux.dailyarticle.util.Constant
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,12 +11,14 @@ import retrofit2.http.Query
 
 interface ArticleApi {
 
-    @GET
+    @GET("article/day?dev=1")
     suspend fun getArticleByDate(@Query("date") date: String): ArticleResp
 
     companion object {
         fun create(): ArticleApi {
-            val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
+            val logger = HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            }
 
             val client = OkHttpClient.Builder()
                 .addInterceptor(logger)
