@@ -54,6 +54,7 @@
                     android:layout_height="wrap_content"
                     android:paddingBottom="10dp"
                     android:text="@{article.content}"
+                    android:textSize="15sp"
                     tools:text="@string/article_content" />
 
                 <com.google.android.material.textview.MaterialTextView
