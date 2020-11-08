@@ -1,6 +1,6 @@
 package com.linux.dailyarticle.api
 
-import com.linux.dailyarticle.api.response.article.ArticleResp
+import com.linux.dailyarticle.domain.entity.Article
 import com.linux.dailyarticle.util.Constant
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,8 +11,8 @@ import retrofit2.http.Query
 
 interface ArticleApi {
 
-    @GET("article/day?dev=1")
-    suspend fun getArticleByDate(@Query("date") date: String): ArticleResp
+    @GET("daily_article")
+    suspend fun getArticleByDate(@Query("date") date: String): Article
 
     companion object {
         fun create(): ArticleApi {
