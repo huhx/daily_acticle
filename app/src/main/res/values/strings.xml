@@ -2,12 +2,14 @@
     <string name="app_name">DailyArticle</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_username">胡红翔</string>
+    <string name="nav_header_signature">这个人很懒，什么也没有留下</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_mark">文章收藏</string>
+    <string name="menu_setting">阅读设置</string>
+    <string name="menu_vote">赏个好评</string>
+    <string name="menu_donate">友情赞赏</string>
+    <string name="menu_privacy">用户协议</string>
 </resources>
