@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.linux.dailyarticle.databinding.FragmentHomeBinding
+import com.linux.dailyarticle.util.DateUtils
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,6 +25,14 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         viewModel.article.observe(viewLifecycleOwner) {
             binding.article = it
+        }
+
+        binding.tvAuthor.setOnClickListener {
+            viewModel.setDate(DateUtils.getToDateAfterDays(viewModel.date.value, -1))
+        }
+
+        binding.tvTitle.setOnClickListener {
+            viewModel.setDate(DateUtils.getToDateAfterDays(viewModel.date.value, 1))
         }
         return binding.root
     }

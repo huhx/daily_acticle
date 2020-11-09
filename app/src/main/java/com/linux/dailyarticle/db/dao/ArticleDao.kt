@@ -14,5 +14,10 @@ interface ArticleDao {
     suspend fun insertAll(relationArticles: List<RelationArticle>)
 
     @Query("SELECT * FROM FAVORITE_ARTICLE")
-    suspend fun getFavoriteArticles(): List<FavoriteArticle>
+    fun getFavoriteArticles(): List<FavoriteArticle>
+
+
+    @Query("SELECT old_date FROM RELATION_ARTICLE where new_date = :date")
+    fun getRelationDate(date: String): String
+
 }

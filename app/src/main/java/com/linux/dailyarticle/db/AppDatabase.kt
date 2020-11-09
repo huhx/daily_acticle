@@ -7,11 +7,11 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import com.linux.dailyarticle.db.dao.ArticleDao
 import com.linux.dailyarticle.domain.entity.FavoriteArticle
 import com.linux.dailyarticle.domain.entity.RelationArticle
 import com.linux.dailyarticle.util.Constant
 import com.linux.dailyarticle.works.SeedDatabaseWorker
-import com.linux.dailyarticle.db.dao.ArticleDao
 
 @Database(entities = [RelationArticle::class, FavoriteArticle::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
@@ -38,7 +38,7 @@ abstract class AppDatabase : RoomDatabase() {
                             WorkManager.getInstance(context).enqueue(request)
                         }
                     }
-                ).build()
+                ).allowMainThreadQueries().build()
         }
     }
 }
