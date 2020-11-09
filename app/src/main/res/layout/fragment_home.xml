@@ -13,20 +13,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="16dp"
         tools:context=".ui.home.HomeFragment">
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingVertical="10dp"
+                android:paddingBottom="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -52,8 +52,8 @@
                     android:id="@+id/tv_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:htmlText="@{article.content}"
                     android:paddingBottom="10dp"
-                    android:text="@{article.content}"
                     android:textSize="15sp"
                     tools:text="@string/article_content" />
 
@@ -65,7 +65,7 @@
                     android:text="@{article.words}"
                     tools:text="@string/article_words" />
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,11 +1,11 @@
 package com.linux.dailyarticle.ui.favorite
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.linux.dailyarticle.R
 
 class FavoriteArticleFragment : Fragment() {
@@ -20,7 +20,7 @@ class FavoriteArticleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.favorite_article_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_favorite_article, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
