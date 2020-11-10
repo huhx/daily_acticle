@@ -28,11 +28,11 @@ class HomeFragment : Fragment() {
         }
 
         binding.tvAuthor.setOnClickListener {
-            viewModel.setDate(DateUtils.getToDateAfterDays(viewModel.date.value, -1))
+            viewModel.setDate(DateUtils.plusDays(viewModel.date.value, -1))
         }
 
         binding.tvTitle.setOnClickListener {
-            viewModel.setDate(DateUtils.getToDateAfterDays(viewModel.date.value, 1))
+            viewModel.setDate(DateUtils.plusDays(viewModel.date.value, 1))
         }
         return binding.root
     }

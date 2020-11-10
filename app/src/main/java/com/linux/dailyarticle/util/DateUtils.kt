@@ -5,15 +5,17 @@ import java.util.*
 
 object DateUtils {
 
+    const val DATE_FORMAT = "yyyyMMdd"
+
     fun format(date: Date, pattern: String): String {
         return SimpleDateFormat(pattern, Locale.getDefault()).format(date)
     }
 
     fun currentArticle(): String {
-        return format(Date(), "yyyyMMdd")
+        return format(Date(), DATE_FORMAT)
     }
 
-    fun getToDateAfterDays(date: Date?, day: Int): Date {
+    fun plusDays(date: Date?, day: Int): Date {
         val cal = Calendar.getInstance()
         cal.time = date
         cal.add(Calendar.DATE, day)
