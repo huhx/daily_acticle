@@ -5,10 +5,14 @@ import java.util.*
 
 object DateUtils {
 
-    const val DATE_FORMAT = "yyyyMMdd"
+    private const val DATE_FORMAT = "yyyyMMdd"
 
-    fun format(date: Date, pattern: String): String {
+    private fun format(date: Date?, pattern: String): String {
         return SimpleDateFormat(pattern, Locale.getDefault()).format(date)
+    }
+
+    fun dateFormat(date: Date?): String {
+        return format(date, DATE_FORMAT)
     }
 
     fun currentArticle(): String {

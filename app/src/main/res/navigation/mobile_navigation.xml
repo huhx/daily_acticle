@@ -10,9 +10,6 @@
         android:name="com.linux.dailyarticle.ui.home.HomeFragment"
         android:label="@string/menu_mark"
         tools:layout="@layout/fragment_home">
-        <argument
-            android:name="date"
-            app:argType="string" />
     </fragment>
 
     <fragment

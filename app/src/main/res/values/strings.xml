@@ -17,4 +17,5 @@
     <string name="menu_donate">友情赞赏</string>
     <string name="menu_privacy">用户协议</string>
     <string name="article_words">2049</string>
+    <string name="article_ismark">false</string>
 </resources>
