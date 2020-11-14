@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.linux.dailyarticle.MainActivity
@@ -47,9 +46,6 @@ class HomeFragment : Fragment() {
         binding.tvWords.setOnClickListener {
             viewModel.updateFavoriteArticle()
         }
-        (activity as AppCompatActivity).setSupportActionBar(binding.homeToolbar)
-        binding.homeToolbar.setNavigationIcon(R.drawable.ic_menu_camera)
-        binding.homeToolbar.inflateMenu(R.menu.main)
         binding.homeToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.action_settings ->

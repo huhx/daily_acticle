@@ -32,13 +32,16 @@
                 android:id="@+id/toolbar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                android:fitsSystemWindows="true">
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/home_toolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize">
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:menu="@menu/main"
+                    app:navigationIcon="@drawable/ic_menu_camera">
 
                 </androidx.appcompat.widget.Toolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -46,10 +49,9 @@
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
-            android:layout_marginTop="?attr/actionBarSize"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior=".adapter.OverScrollBehavior">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,14 +84,13 @@
                     android:layout_height="wrap_content"
                     android:htmlText="@{article.content}"
                     android:justificationMode="inter_word"
-                    android:paddingBottom="10dp"
                     android:textSize="16sp"
                     tools:text="@string/article_content" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#FF00FF"
+                    android:background="#787878"
                     android:paddingBottom="10dp" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -97,6 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:paddingVertical="10dp"
                     android:text="@{article.words}"
                     tools:text="@string/article_words" />
 
