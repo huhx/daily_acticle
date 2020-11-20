@@ -13,20 +13,9 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_mark"
+        android:id="@+id/nav_favorite"
         android:name="com.linux.dailyarticle.ui.favorite.FavoriteArticleFragment"
         android:label="@string/menu_mark"
         tools:layout="@layout/fragment_favorite_article" />
 
-    <fragment
-        android:id="@+id/nav_setting"
-        android:name="com.linux.dailyarticle.ui.gallery.GalleryFragment"
-        android:label="@string/menu_setting"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_vote"
-        android:name="com.linux.dailyarticle.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_vote"
-        tools:layout="@layout/fragment_slideshow" />
 </navigation>

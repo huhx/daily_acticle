@@ -44,5 +44,6 @@ class HomeViewModel @ViewModelInject constructor(private val repository: Article
     }
 
     fun updateFavoriteArticle() {
+
     }
 }
