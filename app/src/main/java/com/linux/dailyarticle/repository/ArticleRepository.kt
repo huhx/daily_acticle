@@ -27,6 +27,14 @@ class ArticleRepository @Inject constructor(private val articleDao: ArticleDao, 
         return articleDao.getFavorite(date)
     }
 
+    suspend fun saveFavoriteArticle(favoriteArticle: FavoriteArticle) {
+        articleDao.insertFavorite(favoriteArticle)
+    }
+
+    suspend fun updateFavoriteArticle(favoriteArticle: FavoriteArticle) {
+        articleDao.updateFavorite(favoriteArticle)
+    }
+
     companion object {
         private const val NETWORK_PAGE_SIZE = 10
     }

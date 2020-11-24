@@ -24,6 +24,18 @@ fun bindWordContent(view: MaterialTextView, textContent: String?) {
     }
 }
 
+@BindingAdapter("android:dateText")
+fun bindDateContent(view: MaterialTextView, dateString: String?) {
+    if (TextUtils.isEmpty(dateString)) {
+        view.text = ""
+    } else {
+        val year = dateString?.subSequence(0, 4)
+        val month = dateString?.subSequence(4, 6)
+        val day = dateString?.subSequence(6, 8)
+        view.text = "$year-$month-$day"
+    }
+}
+
 fun removeDuplicate(textContent: String?): String {
     return textContent?.replace("<p> </p>", "")!!
 }
