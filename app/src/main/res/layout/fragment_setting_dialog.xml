@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/list_item_spacing_half"
+        android:paddingBottom="@dimen/list_item_spacing_half">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_download"
+            style="@style/BottomSheetItem"
+            android:drawableStart="@drawable/ic_menu_camera"
+            android:text="Download"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_copy"
+            style="@style/BottomSheetItem"
+            android:drawableStart="@drawable/ic_menu_camera"
+            android:text="Share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_download" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fontsize"
+            style="@style/BottomSheetItem"
+            android:drawableStart="@drawable/ic_menu_camera"
+            android:text="FontSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_copy" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,8 +1,8 @@
 package com.linux.dailyarticle.binding
 
 import android.text.Html
-import android.text.Html.FROM_HTML_MODE_LEGACY
 import android.text.TextUtils
+import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.databinding.BindingAdapter
 import com.google.android.material.textview.MaterialTextView
 
@@ -11,7 +11,7 @@ fun bindTextContent(view: MaterialTextView, textContent: String?) {
     if (TextUtils.isEmpty(textContent)) {
         view.text = ""
     } else {
-        view.text = Html.fromHtml(removeDuplicate(textContent), FROM_HTML_MODE_LEGACY)
+        view.text = Html.fromHtml(removeDuplicate(textContent), FROM_HTML_MODE_COMPACT)
     }
 }
 
@@ -37,5 +37,5 @@ fun bindDateContent(view: MaterialTextView, dateString: String?) {
 }
 
 fun removeDuplicate(textContent: String?): String {
-    return textContent?.replace("<p> </p>", "")!!
+    return textContent?.replace(Regex("<p>( *)</p>"), "")!!
 }

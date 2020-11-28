@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -15,90 +14,81 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context=".ui.home.HomeFragment">
+        android:scrollbars="none">
 
-        <ScrollView
-            android:id="@+id/scrollView"
+        <LinearLayout
+            android:id="@+id/linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="16dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{article.title}"
+                android:textSize="20sp"
+                tools:text="@string/app_name" />
 
             <LinearLayout
-                android:id="@+id/linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingHorizontal="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingVertical="16dp">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_title"
+                    android:id="@+id/tv_author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:text="@{article.title}"
-                    android:textSize="20sp"
+                    android:text="@{article.author}"
                     tools:text="@string/app_name" />
 
-                <LinearLayout
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tv_author"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        android:text="@{article.author}"
-                        tools:text="@string/app_name" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tv_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        android:dateText="@{article.date}"
-                        tools:text="@string/app_name" />
-                </LinearLayout>
-
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:htmlText="@{article.content}"
-                    android:justificationMode="inter_word"
-                    android:textSize="16sp"
-                    tools:text="@string/article_content" />
-
                 <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#787878"
-                    android:paddingBottom="10dp" />
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_words"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingVertical="10dp"
-                    android:wordtext="@{article.words}"
-                    tools:text="@string/article_words" />
+                    android:dateText="@{article.date}"
+                    tools:text="@string/app_name" />
             </LinearLayout>
-        </ScrollView>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:htmlText="@{article.content}"
+                android:justificationMode="inter_word"
+                android:textSize="16sp"
+                tools:text="@string/article_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#787878"
+                android:paddingBottom="10dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_words"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:wordtext="@{article.words}"
+                tools:text="@string/article_words" />
+        </LinearLayout>
+    </ScrollView>
+
 </layout>

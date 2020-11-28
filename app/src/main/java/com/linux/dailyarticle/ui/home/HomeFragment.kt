@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.linux.dailyarticle.databinding.FragmentHomeBinding
+import com.linux.dailyarticle.ui.sheet.SettingDialogFragment
 import com.linux.dailyarticle.util.DateUtils
 import dagger.hilt.android.AndroidEntryPoint
 import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
@@ -46,7 +47,11 @@ class HomeFragment : Fragment() {
                 if (event.x < screenWidth * 0.25) {
                     viewModel.setDate(DateUtils.plusDays(viewModel.currentDate.value, -1))
                 } else if (event.x >= screenWidth * 0.25 && event.x <= screenWidth * 0.75) {
-                    Toast.makeText(context, "Hello World", Toast.LENGTH_SHORT).show()
+                    activity?.supportFragmentManager?.let {
+                        SettingDialogFragment().apply {
+                            show(it, tag)
+                        }
+                    }
                 } else {
                     val date = DateUtils.plusDays(viewModel.currentDate.value, 1)
                     if (DateUtils.isAfter(date, Date())) {
