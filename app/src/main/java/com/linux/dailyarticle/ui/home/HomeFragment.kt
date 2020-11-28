@@ -13,10 +13,10 @@ import androidx.fragment.app.viewModels
 import com.linux.dailyarticle.databinding.FragmentHomeBinding
 import com.linux.dailyarticle.ui.sheet.SettingDialogFragment
 import com.linux.dailyarticle.util.DateUtils
+import com.linux.dailyarticle.util.SystemUtil
 import dagger.hilt.android.AndroidEntryPoint
 import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
 import java.util.*
-
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -56,6 +56,7 @@ class HomeFragment : Fragment() {
                     val date = DateUtils.plusDays(viewModel.currentDate.value, 1)
                     if (DateUtils.isAfter(date, Date())) {
                         Toast.makeText(context, "到底了，看不到了", Toast.LENGTH_SHORT).show()
+                        SystemUtil.vibration(requireContext(), 300)
                     } else {
                         viewModel.setDate(date)
                     }

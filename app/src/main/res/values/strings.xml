@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">每日一文</string>
+    <string name="is_mark">true</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_username">胡红翔</string>
