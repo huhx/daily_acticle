@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.linux.dailyarticle.databinding.FragmentHomeBinding
@@ -55,7 +54,7 @@ class HomeFragment : Fragment() {
                 } else {
                     val date = DateUtils.plusDays(viewModel.currentDate.value, 1)
                     if (DateUtils.isAfter(date, Date())) {
-                        Toast.makeText(context, "到底了，看不到了", Toast.LENGTH_SHORT).show()
+                        SystemUtil.shortToast(requireContext(), "到底了，看不到了")
                         SystemUtil.vibration(requireContext(), 300)
                     } else {
                         viewModel.setDate(date)

@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.linux.dailyarticle.databinding.FragmentSettingDialogBinding
+import com.linux.dailyarticle.util.SystemUtil
 
 /**
  *
@@ -36,15 +36,15 @@ class SettingDialogFragment : BottomSheetDialogFragment() {
     private fun setupViews() {
         binding.txtDownload.setOnClickListener {
             dismissAllowingStateLoss()
-            Toast.makeText(context, "download", Toast.LENGTH_SHORT).show()
+            SystemUtil.shortToast(requireContext(), "download")
         }
         binding.txtCopy.setOnClickListener {
             dismissAllowingStateLoss()
-            Toast.makeText(context, "copy", Toast.LENGTH_SHORT).show()
+            SystemUtil.shortToast(requireContext(), "copy")
         }
         binding.fontsize.setOnClickListener {
             dismissAllowingStateLoss()
-            Toast.makeText(context, "fontsize", Toast.LENGTH_SHORT).show()
+            SystemUtil.shortToast(requireContext(), "download")
         }
     }
 }

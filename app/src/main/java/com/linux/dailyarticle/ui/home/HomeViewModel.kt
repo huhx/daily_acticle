@@ -35,7 +35,7 @@ class HomeViewModel @ViewModelInject constructor(private val repository: Article
         viewModelScope.launch {
             try {
                 article.postValue(repository.getArticle(dateString))
-                val favoriteArticle = repository.queryFavorite(DateUtils.dateFormat(currentDate.value))
+                val favoriteArticle = repository.queryFavorite(DateUtils.dateFormat(currentDate.value!!))
                 isMarked.postValue(favoriteArticle?.status)
             } catch (e: Exception) {
                 errorMessage.value = e.message
