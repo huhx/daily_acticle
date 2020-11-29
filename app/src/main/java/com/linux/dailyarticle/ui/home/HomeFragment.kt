@@ -14,8 +14,8 @@ import com.linux.dailyarticle.ui.sheet.SettingDialogFragment
 import com.linux.dailyarticle.util.DateUtils
 import com.linux.dailyarticle.util.SystemUtil
 import dagger.hilt.android.AndroidEntryPoint
-import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
 import java.util.*
+
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -29,17 +29,16 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         viewModel.article.observe(viewLifecycleOwner) {
             binding.article = it
         }
         binding.linearLayout.setOnTouchListener(onTouchListener())
-        OverScrollDecoratorHelper.setUpOverScroll(binding.scrollView)
         return binding.root
     }
 
-    private fun onTouchListener(): (v: View, event: MotionEvent) -> Boolean {
+    private fun onTouchListener(): (v: View?, event: MotionEvent) -> Boolean {
         return { _, event ->
             val screenWidth = getScreenWidth()
             if (event.action == MotionEvent.ACTION_UP) {

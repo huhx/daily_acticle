@@ -1,7 +1,7 @@
 package com.linux.dailyarticle.api
 
+import com.linux.dailyarticle.common.Constant
 import com.linux.dailyarticle.domain.entity.Article
-import com.linux.dailyarticle.util.Constant
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

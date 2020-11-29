@@ -73,9 +73,6 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:$rootProject.hilt_viewmodel_version"
 
 
-    implementation "me.everything:overscroll-decor-android:$rootProject.overscroll_version"
-
-
     // network
     implementation "com.google.code.gson:gson:$rootProject.gson_gersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp_logging_version"
@@ -95,6 +92,8 @@ dependencies {
     // work manager
     implementation "androidx.work:work-runtime-ktx:$rootProject.work_version"
 
+    // toggle switch
+    implementation 'us.belka:androidtoggleswitch:1.2.2'
 
     // test
     testImplementation "junit:junit:$rootProject.junit_version"

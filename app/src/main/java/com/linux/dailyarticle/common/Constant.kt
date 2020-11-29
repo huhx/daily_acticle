@@ -1,4 +1,4 @@
-package com.linux.dailyarticle.util
+package com.linux.dailyarticle.common
 
 object Constant {
     const val BASE_URL = "http://47.105.152.148:9094/api/"

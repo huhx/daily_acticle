@@ -23,7 +23,7 @@ class ArticleRepository @Inject constructor(private val articleDao: ArticleDao, 
         return articleApi.getArticleByDate(date)
     }
 
-    suspend fun queryFavorite(date: String): FavoriteArticle? {
+    suspend fun queryFavorite(date: String): FavoriteArticle {
         return articleDao.getFavorite(date)
     }
 

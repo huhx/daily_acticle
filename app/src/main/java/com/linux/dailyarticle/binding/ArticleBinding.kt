@@ -20,7 +20,7 @@ fun bindWordContent(view: MaterialTextView, textContent: String?) {
     if (TextUtils.isEmpty(textContent)) {
         view.text = ""
     } else {
-        view.text = "全文完 共${textContent}字"
+        "全文完 共${textContent}字".also { view.text = it }
     }
 }
 

@@ -8,7 +8,7 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.linux.dailyarticle.db.AppDatabase
 import com.linux.dailyarticle.domain.entity.RelationArticle
-import com.linux.dailyarticle.util.Constant.ARTICLE_DATA_FILENAME
+import com.linux.dailyarticle.common.Constant.ARTICLE_DATA_FILENAME
 import kotlinx.coroutines.coroutineScope
 import timber.log.Timber
 import kotlin.streams.toList

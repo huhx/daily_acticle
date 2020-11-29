@@ -6,8 +6,7 @@ import com.linux.dailyarticle.domain.entity.FavoriteArticle
 
 private const val PAGE_INDEX = 1
 
-class FavoriteArticlePagingSource(private val articleDao: ArticleDao) :
-    PagingSource<Int, FavoriteArticle>() {
+class FavoriteArticlePagingSource(private val articleDao: ArticleDao) : PagingSource<Int, FavoriteArticle>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, FavoriteArticle> {
         val page = params.key ?: PAGE_INDEX
